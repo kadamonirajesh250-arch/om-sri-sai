@@ -65,15 +65,17 @@ const products = [
     },
     {
         id: 6,
-        name: "Hybrid Maize (Corn) Seeds 4kg",
+        name: "CP-818 Hybrid Maize Seeds 4kg (CP Seeds)",
         category: "seeds",
-        price: 920,
-        oldPrice: 1100,
+        price: 980,
+        oldPrice: 1200,
         emoji: "🌽",
-        desc: "Drought-tolerant hybrid corn seeds with strong stalks, robust root anchorage, and exceptionally uniform cob sizing.",
-        rating: 4.5,
-        stock: 2,
-        stockStatus: "lowstock"
+        desc: "High-yield commercial hybrid yellow corn seeds developed by Charoen Pokphand (CP Seeds). Exceptionally drought-tolerant, features strong sturdy stalks, deep root anchorage, and uniform cobs with heavy deep grains.",
+        rating: 4.8,
+        stock: 15,
+        stockStatus: "instock",
+        image: "./images/cp_seeds.png",
+        isPopular: true
     },
     {
         id: 7,
@@ -597,7 +599,7 @@ function renderProducts() {
             outstock: "Out of Stock"
         };
 
-        const imageSrc = imageSrcMap[p.category] || "./images/seeds.png";
+        const imageSrc = p.image || imageSrcMap[p.category] || "./images/seeds.png";
 
         const card = document.createElement("article");
         card.className = "product-card";
@@ -678,7 +680,7 @@ function openDetailsSidebar(p) {
         bio: "./images/organic.png",
         tools: "./images/tools.png"
     };
-    const imageSrc = imageSrcMap[p.category] || "./images/seeds.png";
+    const imageSrc = p.image || imageSrcMap[p.category] || "./images/seeds.png";
 
     detailsBody.innerHTML = `
     <div class="product-img" aria-hidden="true" style="background-image: url('${imageSrc}'); background-size: cover; background-position: center; height: 240px; display: flex; align-items: center; justify-content: center; position: relative; border-radius: var(--radius-md);">
