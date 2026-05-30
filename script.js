@@ -10,7 +10,8 @@ const products = [
         desc: "High-nitrogen chemical urea (46% N) for rapid green vegetative growth in major crops like paddy, wheat, and sugarcane.",
         rating: 4.5,
         stock: 15,
-        stockStatus: "instock"
+        stockStatus: "instock",
+        isPopular: true
     },
     {
         id: 2,
@@ -34,7 +35,8 @@ const products = [
         desc: "Di-Ammonium Phosphate providing balanced nitrogen and highly soluble phosphorus for early root development and strong crop foundation.",
         rating: 4.4,
         stock: 22,
-        stockStatus: "instock"
+        stockStatus: "instock",
+        isPopular: true
     },
     {
         id: 4,
@@ -46,7 +48,8 @@ const products = [
         desc: "High-yielding F1 Hybrid Bt Cotton seeds, genetically optimized for excellent boll retention and highly resistant to bollworms.",
         rating: 4.7,
         stock: 0,
-        stockStatus: "outstock"
+        stockStatus: "outstock",
+        isPopular: true
     },
     {
         id: 5,
@@ -600,6 +603,7 @@ function renderProducts() {
           <div class="badge-stock ${p.stockStatus}">${stockLabels[p.stockStatus]}</div>
           <button class="wishlist-heart-btn" title="Add to Wishlist" aria-label="Add to Wishlist">${isWished ? "❤️" : "🤍"}</button>
           <div class="product-img" aria-hidden="true" style="background-image: url('${imageSrc}'); background-size: cover; background-position: center; height: 160px; display: flex; align-items: center; justify-content: center; position: relative;">
+              ${p.isPopular ? `<span class="popular-badge" style="position: absolute; bottom: 8px; left: 8px; background: var(--accent); color: var(--text-main); padding: 3px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; box-shadow: var(--shadow-sm); letter-spacing: 0.5px; z-index: 5;">🔥 Popular</span>` : ''}
               <span class="emoji-badge" style="position: absolute; bottom: 8px; right: 8px; background: rgba(255,255,255,0.85); border-radius: 50%; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: var(--shadow-sm);">${p.emoji}</span>
           </div>
           <h3 class="product-name">${p.name}</h3>
@@ -682,6 +686,7 @@ function openDetailsSidebar(p) {
         <h2>${p.name}</h2>
         <button id="sidebarHeartBtn" style="background:none; border:none; font-size:1.8rem; cursor:pointer;" aria-label="Toggle Wishlist">${isWished ? "❤️" : "🤍"}</button>
       </div>
+      ${p.isPopular ? `<div style="margin-top: 8px;"><span class="sidebar-popular-badge" style="background: var(--accent); color: var(--text-main); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; display: inline-block;">🔥 Popular Choice</span></div>` : ''}
       <div class="product-price" style="margin:16px 0; align-items: center;">
         <span class="price-new" style="font-size:1.6rem; color:var(--primary); font-weight:700; font-family:var(--font-heading);">₹${p.price}</span>
         <span class="price-old" style="text-decoration:line-through; color:var(--text-muted); margin:0 12px; font-size: 1.1rem;">₹${p.oldPrice}</span>
