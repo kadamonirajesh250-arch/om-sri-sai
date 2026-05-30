@@ -572,6 +572,14 @@ function renderProducts() {
         return;
     }
 
+    const imageSrcMap = {
+        seeds: "./images/seeds.png",
+        organic: "./images/organic.png",
+        chemical: "./images/chemical.png",
+        bio: "./images/organic.png",
+        tools: "./images/tools.png"
+    };
+
     list.forEach(p => {
         const discount = Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100);
         if (!cardQuantities[p.id]) cardQuantities[p.id] = 1;
@@ -583,13 +591,17 @@ function renderProducts() {
             outstock: "Out of Stock"
         };
 
+        const imageSrc = imageSrcMap[p.category] || "./images/seeds.png";
+
         const card = document.createElement("article");
         card.className = "product-card";
         card.setAttribute("tabindex", "0");
         card.innerHTML = `
           <div class="badge-stock ${p.stockStatus}">${stockLabels[p.stockStatus]}</div>
           <button class="wishlist-heart-btn" title="Add to Wishlist" aria-label="Add to Wishlist">${isWished ? "❤️" : "🤍"}</button>
-          <div class="product-img" aria-hidden="true">${p.emoji}</div>
+          <div class="product-img" aria-hidden="true" style="background-image: url('${imageSrc}'); background-size: cover; background-position: center; height: 160px; display: flex; align-items: center; justify-content: center; position: relative;">
+              <span class="emoji-badge" style="position: absolute; bottom: 8px; right: 8px; background: rgba(255,255,255,0.85); border-radius: 50%; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: var(--shadow-sm);">${p.emoji}</span>
+          </div>
           <h3 class="product-name">${p.name}</h3>
           <div class="product-price">
             <span class="price-new">₹${p.price}</span>
@@ -652,8 +664,19 @@ function openDetailsSidebar(p) {
     wishlistSidebar.classList.add("hidden");
     detailsSidebar.setAttribute("aria-hidden", "false");
 
+    const imageSrcMap = {
+        seeds: "./images/seeds.png",
+        organic: "./images/organic.png",
+        chemical: "./images/chemical.png",
+        bio: "./images/organic.png",
+        tools: "./images/tools.png"
+    };
+    const imageSrc = imageSrcMap[p.category] || "./images/seeds.png";
+
     detailsBody.innerHTML = `
-    <div class="product-img" aria-hidden="true">${p.emoji}</div>
+    <div class="product-img" aria-hidden="true" style="background-image: url('${imageSrc}'); background-size: cover; background-position: center; height: 240px; display: flex; align-items: center; justify-content: center; position: relative; border-radius: var(--radius-md);">
+        <span class="emoji-badge" style="position: absolute; bottom: 12px; right: 12px; background: rgba(255,255,255,0.85); border-radius: 50%; width: 46px; height: 46px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: var(--shadow-md);">${p.emoji}</span>
+    </div>
     <div>
       <div style="display:flex; justify-content:space-between; align-items:center; gap: 10px;">
         <h2>${p.name}</h2>
