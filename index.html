@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="GreenGrow - High Germination Farming Seeds, Bio-Fertilizers, Pesticides, and Organic Vermicompost at wholesale prices. Certified seeds with free rural delivery." />
+    <meta name="keywords" content="GreenGrow, seed shop, agricultural store, urea fertilizer, organic manure, farming seed shop, crop protection" />
+    <title>GreenGrow - Premium Fertilizer & Seed Shop</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <header class="navbar" id="navbar">
+        <div class="nav-left">
+            <h1 class="logo" id="logo">🌱 GreenGrow</h1>
+        </div>
+        <div class="nav-center">
+            <input type="text" id="searchInput" placeholder="Search for fertilizers, farming seeds, crop protection..." aria-label="Search Catalog" />
+            <button id="searchBtn" aria-label="Search">Search</button>
+        </div>
+        <div class="nav-right">
+            <button class="wishlist-nav-btn" id="wishlistNavBtn" aria-label="Open Wishlist">
+                ❤️ Wishlist (<span id="wishlistCount">0</span>)
+            </button>
+            <button class="cart-btn" id="cartBtn" aria-label="Open Cart">
+                🛒 Cart <span id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== CATEGORIES SELECTION BAR ===== -->
+    <nav class="categories" id="categoriesNav" aria-label="Product Categories">
+        <button class="cat-btn active" data-category="all">All Catalog</button>
+        <button class="cat-btn" data-category="seeds">Farming Seeds</button>
+        <button class="cat-btn" data-category="organic">Organic Manures</button>
+        <button class="cat-btn" data-category="chemical">Chemical Fertilizers</button>
+        <button class="cat-btn" data-category="bio">Bio-Fertilizers</button>
+        <button class="cat-btn" data-category="tools">Farming Tools</button>
+    </nav>
+
+    <!-- ===== HERO ANNOTATION BANNER ===== -->
+    <section class="banner" id="heroBanner" aria-label="Monsoon Offers">
+        <div class="slides" id="slides">
+            <div class="slide active-slide" style="background: linear-gradient(135deg, hsl(142, 60%, 28%), hsl(142, 40%, 48%));">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Kharif & Monsoon Sowing Special</h2>
+                    <p>Get top quality certified seeds for major farming crops with high germination guarantee.</p>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(135deg, hsl(142, 70%, 15%), hsl(142, 50%, 35%));">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Free Delivery to Rural Hubs</h2>
+                    <p>Enjoy free transportation support on all bulk orders above ₹999.</p>
+                </div>
+            </div>
+            <div class="slide" style="background: linear-gradient(135deg, hsl(38, 90%, 20%), hsl(38, 70%, 40%));">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h2>Bulk Farmer Discounts</h2>
+                    <p>Special direct wholesale pricing for communities, co-operatives, and wholesale buyers.</p>
+                </div>
+            </div>
+        </div>
+        <button class="slide-btn prev" id="prevSlide" aria-label="Previous Slide">‹</button>
+        <button class="slide-btn next" id="nextSlide" aria-label="Next Slide">›</button>
+    </section>
+
+    <!-- ===== SORT SELECTIONS BAR ===== -->
+    <div class="sort-bar" id="sortBar">
+        <h2>Our Catalog</h2>
+        <select id="sortSelect" aria-label="Sort Catalog Items">
+            <option value="default">Sort by: Relevance</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="discount">Top Discount Offers</option>
+        </select>
+    </div>
+
+    <!-- ===== MAIN PRODUCTS GRID ===== -->
+    <main class="products" id="productGrid" aria-live="polite"></main>
+
+    <!-- ===== PRODUCT DETAILS SIDEBAR PANEL ===== -->
+    <aside class="details-sidebar hidden" id="detailsSidebar" aria-labelledby="detailsTitle" aria-hidden="true">
+        <div class="details-header">
+            <h2 id="detailsTitle">Product Details</h2>
+            <button id="closeDetails" aria-label="Close Details Panel">×</button>
+        </div>
+        <div class="details-body" id="detailsBody"></div>
+    </aside>
+
+    <!-- ===== SHOPPING CART DRAWER ===== -->
+    <aside class="cart-sidebar hidden" id="cartSidebar" aria-labelledby="cartTitle" aria-hidden="true">
+        <div class="cart-header">
+            <h2 id="cartTitle">Your Cart 🛒</h2>
+            <button id="closeCart" aria-label="Close Cart Drawer">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <p>Total Amount: <span>₹<span id="cartTotal">0</span></span></p>
+            <button class="checkout-btn" id="cartCheckoutBtn">Proceed to Checkout</button>
+        </div>
+    </aside>
+
+    <!-- ===== WISHLIST SIDEBAR DRAWER ===== -->
+    <aside class="wishlist-sidebar hidden" id="wishlistSidebar" aria-labelledby="wishlistTitle" aria-hidden="true">
+        <div class="wishlist-sidebar-header">
+            <h2 id="wishlistTitle">Your Wishlist ❤️</h2>
+            <button id="closeWishlist" aria-label="Close Wishlist Drawer">×</button>
+        </div>
+        <div class="wishlist-items" id="wishlistItems"></div>
+    </aside>
+
+    <!-- ===== SECURE PAYMENT CHECKOUT MODAL ===== -->
+    <div class="modal-overlay hidden" id="checkoutModal" aria-modal="true" role="dialog" aria-labelledby="checkoutTitle">
+        <div class="modal checkout-modal-content">
+            <button class="close-btn" id="closeCheckout" aria-label="Close Checkout Modal">×</button>
+            <h2 id="checkoutTitle">Secure Checkout</h2>
+            <hr class="divider">
+
+            <div class="checkout-layout">
+                <!-- Left panel: payment info -->
+                <div class="checkout-qr-section">
+                    <p class="section-title">Scan QR Code to Pay</p>
+                    <div class="qr-placeholder">
+                        <div class="qr-graphic">
+                            <!-- Custom SVG drawing a stylish farming QR code outline with standard mock icons -->
+                            <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <rect width="100" height="100" rx="12" fill="white"/>
+                                <!-- QR Corner blocks -->
+                                <rect x="10" y="10" width="22" height="22" rx="4" stroke="hsl(142, 60%, 28%)" stroke-width="4"/>
+                                <rect x="15" y="15" width="12" height="12" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                
+                                <rect x="68" y="10" width="22" height="22" rx="4" stroke="hsl(142, 60%, 28%)" stroke-width="4"/>
+                                <rect x="73" y="15" width="12" height="12" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                
+                                <rect x="10" y="68" width="22" height="22" rx="4" stroke="hsl(142, 60%, 28%)" stroke-width="4"/>
+                                <rect x="15" y="73" width="12" height="12" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                
+                                <!-- Center seed logo -->
+                                <circle cx="50" cy="50" r="12" fill="hsl(42, 100%, 53%)" opacity="0.2"/>
+                                <path d="M50 42C47 46 47 51 50 55C53 51 53 46 50 42Z" fill="hsl(142, 60%, 28%)"/>
+                                
+                                <!-- QR Mock dot clusters -->
+                                <rect x="42" y="15" width="4" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="42" y="27" width="8" height="4" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="56" y="20" width="4" height="4" rx="1" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="15" y="42" width="8" height="4" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="27" y="42" width="4" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="73" y="42" width="8" height="4" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="68" y="52" width="4" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                
+                                <rect x="42" y="68" width="8" height="4" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="52" y="76" width="4" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="68" y="68" width="8" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="amount-text">Total Amount: <strong>₹<span id="checkoutTotalAmount">0</span></strong></p>
+                    <p class="qr-subtext">Scan via any BHIM UPI Application (GPay, PhonePe, Paytm, BHIM)</p>
+                </div>
+
+                <!-- Right panel: user details input form -->
+                <div class="checkout-form-section">
+                    <p class="section-title">Delivery & Payment details</p>
+                    <form id="checkoutForm" novalidate>
+                        <div class="form-group">
+                            <label for="checkoutName">Full Name</label>
+                            <input type="text" id="checkoutName" placeholder="Enter your full name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="checkoutPhone">Phone Number (UPI Linked)</label>
+                            <input type="tel" id="checkoutPhone" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="checkoutAddress">Rural/Shipping Delivery Address</label>
+                            <textarea id="checkoutAddress" placeholder="Enter complete shipping address (Village, Taluk, District, PIN)" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-payment-btn" id="submitPaymentBtn">Verify & Confirm Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ACCREDITATIONS ===== -->
+    <footer class="footer" id="footer">
+        <p style="font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.5px; color: var(--accent);">🏪 OM SRI SAI TRADERS</p>
+        <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 8px;">📞 Contact Mobile: <a href="tel:9441162056" style="color: var(--text-white); text-decoration: none; border-bottom: 2px dashed var(--accent);">+91 9441162056</a></p>
+        <p style="font-size: 0.9rem; opacity: 0.75; margin-top: 14px;">© 2026 Om Sri Sai Traders. All rights reserved. Premium Agricultural Seed & Fertilizer Depot.</p>
+    </footer>
+
+    <!-- Core Scripting -->
+    <script src="script.js"></script>
+</body>
+
+</html>
