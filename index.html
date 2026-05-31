@@ -4,21 +4,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="GreenGrow - High Germination Farming Seeds, Bio-Fertilizers, Pesticides, and Organic Vermicompost at wholesale prices. Certified seeds with free rural delivery." />
-    <meta name="keywords" content="GreenGrow, seed shop, agricultural store, urea fertilizer, organic manure, farming seed shop, crop protection" />
-    <title>GreenGrow - Premium Fertilizer & Seed Shop</title>
+    <meta name="description" content="Flipkart Gold - Exquisite 22K & 24K BIS Hallmarked Gold Jewellery, Coins & Bars. Buy Bridal Necklaces, Wedding Rings, Jhumkas, and Investment Gold online." />
+    <meta name="keywords" content="gold jewelry, buy gold coins, 22 karat gold necklace, 24 karat gold bar, BIS hallmarked gold, Om Sri Sai Gold Palace" />
+    <title>Flipkart Gold - Exquisite 22K & 24K Hallmarked Gold Store</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+    <!-- ===== LIVE GOLD RATE MARQUEE TICKER ===== -->
+    <div class="live-rate-bar" id="liveRateBar">
+        <div class="live-rate-container">
+            <span class="ticker-trust">✨ LIVE SPOT GOLD RATE:</span>
+            <div class="rate-badge" id="rate24kBadge">
+                <span>24K (999 Pure):</span>
+                <span class="rate-val" id="rate24kVal">₹7,450/g</span>
+                <span class="trend-up" id="trend24k">▲</span>
+            </div>
+            <div class="rate-badge" id="rate22kBadge">
+                <span>22K (916 Standard):</span>
+                <span class="rate-val" id="rate22kVal">₹6,830/g</span>
+                <span class="trend-up" id="trend22k">▲</span>
+            </div>
+        </div>
+        <div class="ticker-trust">
+            <span>🛡️ 100% BIS Hallmarked Guarantee</span>
+            <span style="margin: 0 10px;">|</span>
+            <span>🚚 Free Fully-Insured Secure Shipping</span>
+        </div>
+    </div>
+
     <!-- ===== NAVIGATION BAR ===== -->
     <header class="navbar" id="navbar">
         <div class="nav-left">
-            <h1 class="logo" id="logo">🌱 GreenGrow</h1>
+            <h1 class="logo" id="logo">🛒 <span class="gold-text">flipkart</span><span style="color: var(--accent); font-style: italic; font-size: 1.1rem; margin-left: 4px; font-weight: 700;">gold</span></h1>
         </div>
         <div class="nav-center">
-            <input type="text" id="searchInput" placeholder="Search for fertilizers, farming seeds, crop protection..." aria-label="Search Catalog" />
+            <input type="text" id="searchInput" placeholder="Search for bridal necklaces, gold coins, rings, bangles..." aria-label="Search Gold Catalog" />
             <button id="searchBtn" aria-label="Search">Search</button>
         </div>
         <div class="nav-right">
@@ -32,37 +54,40 @@
     </header>
 
     <!-- ===== CATEGORIES SELECTION BAR ===== -->
-    <nav class="categories" id="categoriesNav" aria-label="Product Categories">
-        <button class="cat-btn active" data-category="all">All Catalog</button>
-        <button class="cat-btn" data-category="seeds">Farming Seeds</button>
-        <button class="cat-btn" data-category="organic">Organic Manures</button>
-        <button class="cat-btn" data-category="chemical">Chemical Fertilizers</button>
-        <button class="cat-btn" data-category="bio">Bio-Fertilizers</button>
-        <button class="cat-btn" data-category="tools">Farming Tools</button>
+    <nav class="categories" id="categoriesNav" aria-label="Gold Product Categories">
+        <button class="cat-btn active" data-category="all">💍 All Ornaments</button>
+        <button class="cat-btn" data-category="coins">🪙 24K Coins & Bars</button>
+        <button class="cat-btn" data-category="necklaces">📿 Bridal Necklaces</button>
+        <button class="cat-btn" data-category="rings">💍 Exquisite Rings</button>
+        <button class="cat-btn" data-category="earrings">✨ Designer Earrings</button>
+        <button class="cat-btn" data-category="bangles">💫 Traditional Bangles</button>
     </nav>
 
     <!-- ===== HERO ANNOTATION BANNER ===== -->
-    <section class="banner" id="heroBanner" aria-label="Monsoon Offers">
+    <section class="banner" id="heroBanner" aria-label="Festive Gold Offers">
         <div class="slides" id="slides">
-            <div class="slide active-slide" style="background: linear-gradient(135deg, hsl(142, 60%, 28%), hsl(142, 40%, 48%));">
+            <!-- Akshaya Tritiya slide using generated image -->
+            <div class="slide active-slide" style="background-image: url('./images/gold_banner.png');">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
-                    <h2>Kharif & Monsoon Sowing Special</h2>
-                    <p>Get top quality certified seeds for major farming crops with high germination guarantee.</p>
+                    <h2>Akshaya Tritiya Gold Festival</h2>
+                    <p>Invite auspiciousness into your home. Save up to 50% on making charges for all certified bridal gold jewellery & investment coins.</p>
                 </div>
             </div>
-            <div class="slide" style="background: linear-gradient(135deg, hsl(142, 70%, 15%), hsl(142, 50%, 35%));">
-                <div class="slide-overlay"></div>
+            <!-- Coins & Bars Slide using generated gold_coin image as visual reference -->
+            <div class="slide" style="background-image: url('./images/gold_coin.png'); background-size: cover; background-position: right 10% center;">
+                <div class="slide-overlay" style="background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%);"></div>
                 <div class="slide-content">
-                    <h2>Free Delivery to Rural Hubs</h2>
-                    <p>Enjoy free transportation support on all bulk orders above ₹999.</p>
+                    <h2>24K Investment Coins & Bars</h2>
+                    <p>999 purity certified gold bars directly from secure Swiss mints. Zero making charge today! Secure your wealth now.</p>
                 </div>
             </div>
-            <div class="slide" style="background: linear-gradient(135deg, hsl(38, 90%, 20%), hsl(38, 70%, 40%));">
-                <div class="slide-overlay"></div>
+            <!-- Rings Slide using generated gold_ring image as background reference -->
+            <div class="slide" style="background-image: url('./images/gold_ring.png'); background-size: cover; background-position: right center;">
+                <div class="slide-overlay" style="background: linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%);"></div>
                 <div class="slide-content">
-                    <h2>Bulk Farmer Discounts</h2>
-                    <p>Special direct wholesale pricing for communities, co-operatives, and wholesale buyers.</p>
+                    <h2>Royal Diamond & Gold Bands</h2>
+                    <p>Exquisite craftsmanship celebrating eternal love. Explore bespoke Solitaire bands in pure 22 Karat gold hallmarked by BIS.</p>
                 </div>
             </div>
         </div>
@@ -70,14 +95,40 @@
         <button class="slide-btn next" id="nextSlide" aria-label="Next Slide">›</button>
     </section>
 
+    <!-- ===== DYNAMIC GOLD RATE CALCULATOR ===== -->
+    <section class="rate-calculator-card" id="rateCalculatorCard">
+        <div class="calc-left">
+            <h3>🧮 Live Gold Value Estimator</h3>
+            <p>Calculate the estimated price of your desired gold weight based on today's simulated live spot market rates instantly.</p>
+        </div>
+        <div class="calc-form">
+            <div class="calc-input-group">
+                <label for="calcWeight">Weight (Grams)</label>
+                <input type="number" id="calcWeight" value="10" min="1" max="1000" />
+            </div>
+            <div class="calc-input-group">
+                <label for="calcPurity">Gold Purity</label>
+                <select id="calcPurity">
+                    <option value="24k">24 Karat (99.9% Pure)</option>
+                    <option value="22k" selected>22 Karat (91.6% Hallmark)</option>
+                </select>
+            </div>
+            <div class="calc-input-group">
+                <label>Estimated Value</label>
+                <div class="calc-result" id="calcResult">₹68,300</div>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== SORT SELECTIONS BAR ===== -->
     <div class="sort-bar" id="sortBar">
-        <h2>Our Catalog</h2>
-        <select id="sortSelect" aria-label="Sort Catalog Items">
+        <h2>Exquisite Ornaments Catalog</h2>
+        <select id="sortSelect" aria-label="Sort Gold Items">
             <option value="default">Sort by: Relevance</option>
             <option value="low">Price: Low to High</option>
             <option value="high">Price: High to Low</option>
             <option value="discount">Top Discount Offers</option>
+            <option value="weight">By Gold Weight</option>
         </select>
     </div>
 
@@ -87,7 +138,7 @@
     <!-- ===== PRODUCT DETAILS SIDEBAR PANEL ===== -->
     <aside class="details-sidebar hidden" id="detailsSidebar" aria-labelledby="detailsTitle" aria-hidden="true">
         <div class="details-header">
-            <h2 id="detailsTitle">Product Details</h2>
+            <h2 id="detailsTitle">✨ <span>Gold Details</span></h2>
             <button id="closeDetails" aria-label="Close Details Panel">×</button>
         </div>
         <div class="details-body" id="detailsBody"></div>
@@ -96,12 +147,33 @@
     <!-- ===== SHOPPING CART DRAWER ===== -->
     <aside class="cart-sidebar hidden" id="cartSidebar" aria-labelledby="cartTitle" aria-hidden="true">
         <div class="cart-header">
-            <h2 id="cartTitle">Your Cart 🛒</h2>
+            <h2 id="cartTitle">Your Gold Bag 🛒</h2>
             <button id="closeCart" aria-label="Close Cart Drawer">×</button>
         </div>
         <div class="cart-items" id="cartItems"></div>
         <div class="cart-footer">
-            <p>Total Amount: <span>₹<span id="cartTotal">0</span></span></p>
+            <table class="cart-invoice-table">
+                <tr>
+                    <td>Gold Value (Live Spot rate):</td>
+                    <td style="text-align: right;">₹<span id="invoiceGoldVal">0</span></td>
+                </tr>
+                <tr>
+                    <td>Making Charges:</td>
+                    <td style="text-align: right;">₹<span id="invoiceMakingVal">0</span></td>
+                </tr>
+                <tr>
+                    <td>GST Tax (3% Standard):<span class="tax-detail">Government Jewellery Tax</span></td>
+                    <td style="text-align: right;">₹<span id="invoiceGstVal">0</span></td>
+                </tr>
+                <tr>
+                    <td>Insured Shipping & Hallmark Badge:</td>
+                    <td style="text-align: right; color: var(--success); font-weight: 700;">FREE</td>
+                </tr>
+                <tr class="total-tr">
+                    <td>Final Payable Amount:</td>
+                    <td style="text-align: right;">₹<span id="cartTotal">0</span></td>
+                </tr>
+            </table>
             <button class="checkout-btn" id="cartCheckoutBtn">Proceed to Checkout</button>
         </div>
     </aside>
@@ -109,7 +181,7 @@
     <!-- ===== WISHLIST SIDEBAR DRAWER ===== -->
     <aside class="wishlist-sidebar hidden" id="wishlistSidebar" aria-labelledby="wishlistTitle" aria-hidden="true">
         <div class="wishlist-sidebar-header">
-            <h2 id="wishlistTitle">Your Wishlist ❤️</h2>
+            <h2 id="wishlistTitle">Your Gold Wishlist ❤️</h2>
             <button id="closeWishlist" aria-label="Close Wishlist Drawer">×</button>
         </div>
         <div class="wishlist-items" id="wishlistItems"></div>
@@ -119,68 +191,68 @@
     <div class="modal-overlay hidden" id="checkoutModal" aria-modal="true" role="dialog" aria-labelledby="checkoutTitle">
         <div class="modal checkout-modal-content">
             <button class="close-btn" id="closeCheckout" aria-label="Close Checkout Modal">×</button>
-            <h2 id="checkoutTitle">Secure Checkout</h2>
+            <h2 id="checkoutTitle">Secure Checkout - <span>Om Sri Sai Gold Palace</span></h2>
             <hr class="divider">
 
-            <div class="checkout-layout">
+            <div class="checkout-layout" id="checkoutLayout">
                 <!-- Left panel: payment info -->
                 <div class="checkout-qr-section">
-                    <p class="section-title">Scan QR Code to Pay</p>
+                    <p class="section-title">Scan QR for Insured Payment</p>
                     <div class="qr-placeholder">
                         <div class="qr-graphic">
-                            <!-- Custom SVG drawing a stylish farming QR code outline with standard mock icons -->
-                            <svg width="120" height="120" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <!-- Custom gold standard QR code drawing using secure vector paths -->
+                            <svg width="130" height="130" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                 <rect width="100" height="100" rx="12" fill="white"/>
                                 <!-- QR Corner blocks -->
-                                <rect x="10" y="10" width="22" height="22" rx="4" stroke="hsl(142, 60%, 28%)" stroke-width="4"/>
-                                <rect x="15" y="15" width="12" height="12" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="10" y="10" width="22" height="22" rx="4" stroke="hsl(222, 47%, 11%)" stroke-width="4"/>
+                                <rect x="15" y="15" width="12" height="12" rx="2" fill="hsl(43, 90%, 53%)"/>
                                 
-                                <rect x="68" y="10" width="22" height="22" rx="4" stroke="hsl(142, 60%, 28%)" stroke-width="4"/>
-                                <rect x="73" y="15" width="12" height="12" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="68" y="10" width="22" height="22" rx="4" stroke="hsl(222, 47%, 11%)" stroke-width="4"/>
+                                <rect x="73" y="15" width="12" height="12" rx="2" fill="hsl(43, 90%, 53%)"/>
                                 
-                                <rect x="10" y="68" width="22" height="22" rx="4" stroke="hsl(142, 60%, 28%)" stroke-width="4"/>
-                                <rect x="15" y="73" width="12" height="12" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="10" y="68" width="22" height="22" rx="4" stroke="hsl(222, 47%, 11%)" stroke-width="4"/>
+                                <rect x="15" y="73" width="12" height="12" rx="2" fill="hsl(43, 90%, 53%)"/>
                                 
                                 <!-- Center seed logo -->
-                                <circle cx="50" cy="50" r="12" fill="hsl(42, 100%, 53%)" opacity="0.2"/>
-                                <path d="M50 42C47 46 47 51 50 55C53 51 53 46 50 42Z" fill="hsl(142, 60%, 28%)"/>
+                                <circle cx="50" cy="50" r="12" fill="hsl(43, 100%, 53%)" opacity="0.2"/>
+                                <path d="M50 40C46 45 46 51 50 56C54 51 54 45 50 40Z" fill="hsl(43, 90%, 53%)"/>
                                 
                                 <!-- QR Mock dot clusters -->
-                                <rect x="42" y="15" width="4" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
-                                <rect x="42" y="27" width="8" height="4" rx="2" fill="hsl(142, 60%, 28%)"/>
-                                <rect x="56" y="20" width="4" height="4" rx="1" fill="hsl(142, 60%, 28%)"/>
-                                <rect x="15" y="42" width="8" height="4" rx="2" fill="hsl(142, 60%, 28%)"/>
-                                <rect x="27" y="42" width="4" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
-                                <rect x="73" y="42" width="8" height="4" rx="2" fill="hsl(142, 60%, 28%)"/>
-                                <rect x="68" y="52" width="4" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="42" y="15" width="4" height="8" rx="2" fill="hsl(222, 47%, 11%)"/>
+                                <rect x="42" y="27" width="8" height="4" rx="2" fill="hsl(222, 47%, 11%)"/>
+                                <rect x="56" y="20" width="4" height="4" rx="1" fill="hsl(222, 47%, 11%)"/>
+                                <rect x="15" y="42" width="8" height="4" rx="2" fill="hsl(222, 47%, 11%)"/>
+                                <rect x="27" y="42" width="4" height="8" rx="2" fill="hsl(222, 47%, 11%)"/>
+                                <rect x="73" y="42" width="8" height="4" rx="2" fill="hsl(222, 47%, 11%)"/>
+                                <rect x="68" y="52" width="4" height="8" rx="2" fill="hsl(222, 47%, 11%)"/>
                                 
-                                <rect x="42" y="68" width="8" height="4" rx="2" fill="hsl(142, 60%, 28%)"/>
-                                <rect x="52" y="76" width="4" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
-                                <rect x="68" y="68" width="8" height="8" rx="2" fill="hsl(142, 60%, 28%)"/>
+                                <rect x="42" y="68" width="8" height="4" rx="2" fill="hsl(222, 47%, 11%)"/>
+                                <rect x="52" y="76" width="4" height="8" rx="2" fill="hsl(222, 47%, 11%)"/>
+                                <rect x="68" y="68" width="8" height="8" rx="2" fill="hsl(222, 47%, 11%)"/>
                             </svg>
                         </div>
                     </div>
-                    <p class="amount-text">Total Amount: <strong>₹<span id="checkoutTotalAmount">0</span></strong></p>
-                    <p class="qr-subtext">Scan via any BHIM UPI Application (GPay, PhonePe, Paytm, BHIM)</p>
+                    <p class="amount-text">Total Invoice Amount: <strong>₹<span id="checkoutTotalAmount">0</span></strong></p>
+                    <p class="qr-subtext">Scan using any BHIM UPI Application (Google Pay, PhonePe, Paytm) to make a 100% insured, secure payment direct to bank vault.</p>
                 </div>
 
                 <!-- Right panel: user details input form -->
                 <div class="checkout-form-section">
-                    <p class="section-title">Delivery & Payment details</p>
+                    <p class="section-title">Vault Shipping Details</p>
                     <form id="checkoutForm" novalidate>
                         <div class="form-group">
-                            <label for="checkoutName">Full Name</label>
-                            <input type="text" id="checkoutName" placeholder="Enter your full name" required />
+                            <label for="checkoutName">Recipient's Full Name</label>
+                            <input type="text" id="checkoutName" placeholder="Enter full legal name" required />
                         </div>
                         <div class="form-group">
-                            <label for="checkoutPhone">Phone Number (UPI Linked)</label>
+                            <label for="checkoutPhone">Mobile Number (UPI Connected)</label>
                             <input type="tel" id="checkoutPhone" pattern="[0-9]{10}" placeholder="Enter 10-digit mobile number" required />
                         </div>
                         <div class="form-group">
-                            <label for="checkoutAddress">Rural/Shipping Delivery Address</label>
-                            <textarea id="checkoutAddress" placeholder="Enter complete shipping address (Village, Taluk, District, PIN)" rows="3" required></textarea>
+                            <label for="checkoutAddress">Secure Insured Delivery Address</label>
+                            <textarea id="checkoutAddress" placeholder="Provide your full delivery address including city, state, and PIN code. Safe transit delivery is 100% insured." rows="3" required></textarea>
                         </div>
-                        <button type="submit" class="submit-payment-btn" id="submitPaymentBtn">Verify & Confirm Order</button>
+                        <button type="submit" class="submit-payment-btn" id="submitPaymentBtn">Verify Payment & Secure Order</button>
                     </form>
                 </div>
             </div>
@@ -189,9 +261,10 @@
 
     <!-- ===== FOOTER ACCREDITATIONS ===== -->
     <footer class="footer" id="footer">
-        <p style="font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 0.5px; color: var(--accent);">🏪 OM SRI SAI TRADERS</p>
-        <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 8px;">📞 Contact Mobile: <a href="tel:9441162056" style="color: var(--text-white); text-decoration: none; border-bottom: 2px dashed var(--accent);">+91 9441162056</a></p>
-        <p style="font-size: 0.9rem; opacity: 0.75; margin-top: 14px;">© 2026 Om Sri Sai Traders. All rights reserved. Premium Agricultural Seed & Fertilizer Depot.</p>
+        <p style="font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; letter-spacing: 0.5px; color: var(--accent);">🏛️ OM SRI SAI GOLD PALACE</p>
+        <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">🌟 Gov. Approved Lic. Gold Bullion & Ornament Depots</p>
+        <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 12px;">📞 Customer Vault Helpline: <a href="tel:9441162056" style="color: var(--accent); text-decoration: none; border-bottom: 2px dashed var(--accent);">+91 9441162056</a></p>
+        <p style="font-size: 0.9rem; opacity: 0.75; margin-top: 20px;">© 2026 Om Sri Sai Gold Palace. All Gold items are verified & certified with BIS Hallmark 916 (22K) & Swiss 999 (24K) purities. Insured transportation handled by secure bullion logisticians.</p>
     </footer>
 
     <!-- Core Scripting -->
